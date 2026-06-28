@@ -1,6 +1,6 @@
 body {
     background-color: darkred;
-    color: gray;
+    color: whitesmoke;
 }
 header, main, nav, footer {
     text-align: center;
@@ -20,4 +20,8 @@ nav a :hover {
 main {
     display: flex;
     justify-content: center;
+}
+footer {
+    color: gray;
+    font-size: 10pt;
 }
