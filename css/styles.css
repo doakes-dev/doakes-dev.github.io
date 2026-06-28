@@ -32,12 +32,12 @@ td {
 td strong{
     color: orange;
 }
-#table-header{
+.table-header{
     background-color: darkcyan;
     border-color: black;
     border-width: 2px;
 }
-#table-row{
+.table-row{
     background-color: antiquewhite;
     border-color: black;
     border-width: 2px;
