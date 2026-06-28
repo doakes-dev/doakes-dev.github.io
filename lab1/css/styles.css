@@ -25,3 +25,24 @@ footer {
     color: gray;
     font-size: 10pt;
 }
+td { 
+    margin: 10px auto;
+    font-size: 1.3em;
+}
+td strong{
+    color: orange;
+}
+#table-header{
+    background-color: aqua;
+}
+.table-row{
+    background-color: antiquewhite;
+}
+ul {
+    width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+.hobby {
+    color: blueviolet;
+}
