@@ -1,5 +1,5 @@
 body {
-    background-color: darkblue;
+    background-color: darkred;
     color: whitesmoke;
 }
 header, main, nav, footer {
@@ -33,10 +33,14 @@ td strong{
     color: orange;
 }
 #table-header{
-    background-color: aqua;
+    background-color: darkcyan;
+    border-color: black;
+    border-width: 2px;
 }
-.table-row{
+#table-row{
     background-color: antiquewhite;
+    border-color: black;
+    border-width: 2px;
 }
 ul {
     width: 500px;
@@ -45,4 +49,5 @@ ul {
 }
 .hobby {
     color: blueviolet;
+    background-color: black;
 }
