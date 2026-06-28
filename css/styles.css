@@ -37,8 +37,8 @@ td strong{
     border-color: black;
     border-width: 2px;
 }
-.table-row{
-    background-color: darkred;
+#table-row{
+    background-color: antiquewhite;
     border-color: black;
     border-width: 2px;
 }
