@@ -33,9 +33,9 @@ td strong{
     color: orange;
 }
 #table-header{
-    background-color: aqua;
+    background-color: darkcyan;
 }
-.table-row{
+#table-row{
     background-color: antiquewhite;
 }
 ul {
@@ -45,4 +45,5 @@ ul {
 }
 .hobby {
     color: blueviolet;
+    background-color: black;
 }
