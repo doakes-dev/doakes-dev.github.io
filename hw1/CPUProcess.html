@@ -27,7 +27,7 @@
             <section class="algorithms">
             <article class="algorithm">
                 <h2>First In, Last Out (FIFO)</h2>
-                <p></p>
+                <p>Easily the simplist of the algorithms to implement and visualize, FIFO scheduling has tasks be completed in the order they arrived. This simplicity does come with some noteworthy drawbacks, namely in the form of response times being heavily influenced by how long it will take for tasks to be completed. Suppose a task that takes 10 seconds to complete shows up first followed by 3 tasks that take 1 second each. Those three shorter tasks are stuck waiting behind the first task.</p>
 
                 <h3>Advantages</h3>
                 <ul>
@@ -35,16 +35,16 @@
                     <li>Fair arrival order</li>
                 </ul>
 
-                <h3>
+                <h3>Disadvantage</h3>
                     <ul>
                         <li>Long jobs delay short ones</li>
                     </ul>
-                </h3>
+                
             </article>
 
             <article class="algorithm">
                 <h2>Shortest Job First (SJF)</h2>
-                <p></p>
+                <p>This algorithm doesn't have as strict an ordering as FIFO. When a task is completed, SJF looks among the waiting tasks and picks the one that should take the least amount of time to complete. Picture that the processor is already working on a task and three new tasks turn up, a six second task, a three second task, and a four second task, in that order. Under SJF, the scheduler would pick the three second task first, then the four second task, then the six second task. This can get more tasks done in less time than FIFO as the shortest tasks are picked first. But, if short tasks keep coming in, longer tasks may be postponed indefinitely, a problem known as 'Starvation'.</p>
 
                 <h3>Advantages</h3>
                 <ul>
@@ -52,16 +52,16 @@
                     <li>Finishes many short jobs quickly</li>
                 </ul>
 
-                <h3>
+                <h3>Disadvantage</h3>
                     <ul>
                         <li>Can starve long jobs</li>
                     </ul>
-                </h3>
+                
             </article>
 
             <article class="algorithm">
                 <h2>Round Robin (RR)</h2>
-                <p></p>
+                <p>A relatively complex algorithm to implement, Round Robin scheduling divides processor time into really short blocks (or slices, if you find that easier to picture) and rotates through any task that comes in. Assume there are three tasks, A, B, and C. Under Round Robin, task A would have the processor for a time block, then be put on hold so B can have the next block. Then B is put on hold so C can have the one after. Because each waiting process receives a time slice in turn, response times are generally much shorter than with FIFO. However, whenever the scheduler changes from one process to another, the CPU performs a context switch, saving the state of the current process before loading the next one. And even if this delay didn't exist, there's still the fact that  the processor's time is being split across multiple processes! Take the three tasks again, if they're all active, one second for the processor is a third of a second for each task. So each task would take three times as long to complete, which is terrible for turnaround time. </p>
 
                 <h3>Advantages</h3>
                 <ul>
@@ -69,11 +69,11 @@
                     <li>Fair to all processes</li>
                 </ul>
 
-                <h3>
+                <h3>Disadvantage</h3>
                     <ul>
                         <li>Frequent context switches add overhead</li>
                     </ul>
-                </h3>
+                
             </article>
 
             </section>
