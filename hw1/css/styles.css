@@ -1,0 +1,24 @@
+body {
+    background-color: darkblue;
+    color: whitesmoke;
+}
+header, main, nav, footer {
+    text-align: center;
+}
+nav a {
+    padding: 12px;
+    padding-bottom: 4px;
+    font-size: 1.8em;
+    text-decoration: none;
+    color: whitesmoke;
+}
+nav a.active {
+    font-size: 2.0em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+nav a:not(.active):hover{
+    font-size: 2.0em;
+    font-weight: bold;
+    transition: 0.8s;
+}
