@@ -2,8 +2,16 @@ body {
     background-color: darkblue;
     color: whitesmoke;
 }
-header, main, nav, footer {
+main, nav, footer {
     text-align: center;
+}
+header{
+    text-align: center;
+    padding: 6px;
+    padding-bottom: 2px;
+    font-size: 2.2em;
+    font-weight: bold;
+    text-decoration: underline;
 }
 nav a {
     padding: 12px;
