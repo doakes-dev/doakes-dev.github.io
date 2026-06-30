@@ -30,3 +30,10 @@ nav a:not(.active):hover{
     font-weight: bold;
     transition: 0.8s;
 }
+.algorithm {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #555;
+    border-radius: 8px;
+    background-color: blue;
+}
