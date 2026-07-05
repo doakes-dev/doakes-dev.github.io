@@ -3,12 +3,17 @@ body {
     color: #ade8f4;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    
 }
-.header{
+header {
     text-align: center;
     font-weight: bold;
     text-decoration: underline;
     padding: 6px;
     padding-bottom: 2px;
+}
+.stat {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin: 8px auto;
 }
