@@ -15,6 +15,8 @@ function initializeGame() {
     console.log("randomNumber: " + randomNumber)
     attempts = 0;
     document.querySelector("#attemptCount").textContent = attempts;
+    document.querySelector("#lossCount").textContent = losses;
+    document.querySelector("#winCount").textContent = wins;
 
     //hiding the Reset button
     document.querySelector("#resetBtn").style.display = "none";
@@ -49,8 +51,9 @@ function checkGuess() {
     feedback.style.color = "orange";
     if (guess == randomNumber) {
         feedback.textContent = "You've guessed it! You Won!";
-        feedback.style.color = "darkgreen";
+        feedback.style.color = "#00b4d8";
         wins++;
+        document.querySelector("#winCount").textContent = wins;
         gameOver();
     } else {
         document.querySelector("#guesses").textContent += guess + " ";
@@ -58,6 +61,7 @@ function checkGuess() {
             feedback.textContent = "Sorry, you lost!";
             feedback.style.color = "red";
             losses++;
+            document.querySelector("#lossCount").textContent = losses;
             gameOver();
         } else if (guess > randomNumber) {
             feedback.textContent = "Guess was high";
