@@ -5,8 +5,8 @@ document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 // Global Variables
 let randomNumber;
 let attempts;
-let wins;
-let losses;
+let wins = 0;
+let losses = 0;
 
 initializeGame();
 
@@ -14,8 +14,7 @@ function initializeGame() {
     randomNumber = Math.floor(Math.random() * 99) + 1;
     console.log("randomNumber: " + randomNumber)
     attempts = 0;
-    losses = 0;
-    wins = 0;
+
     document.querySelector("#attemptCount").textContent = attempts;
     document.querySelector("#lossCount").textContent = losses;
     document.querySelector("#winCount").textContent = wins;
