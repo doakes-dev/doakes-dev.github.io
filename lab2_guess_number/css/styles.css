@@ -4,8 +4,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     text-align: center;
+    line-height: 1.6;
 }
-head {
+header {
     font-weight: bold;
     text-decoration: underline;
     padding: 6px;
@@ -25,42 +26,23 @@ main, footer {
     align-items: center;
 }
 
-#guessBtn {
+.button {
     background-color: #0077b6;
     color: #ade8f4;
     border: none;
     transition: all 0.3s ease;
 }
 
-#guessBtn :hover {
+.button:hover {
     background-color: #0096c7;
     transform: translateY(-2px);
     box-shadow: 2px 4px 8px black;
     cursor: pointer;
 }
 
-#guessBtn :active {
+.button:active {
     background-color: #023e8a;
     transform: translateY(0);
     box-shadow: 2px 2px 6px black;
 }
 
-#resetBtn {
-    background-color: #0077b6;
-    color: #ade8f4;
-    border: none;
-    transition: all 0.3s ease;
-}
-
-#resetBtn :hover {
-    background-color: #0096c7;
-    transform: translateY(-2px);
-    box-shadow: 2px 4px 8px black;
-    cursor: pointer;
-}
-
-#resetBtn :active {
-    background-color: #023e8a;
-    transform: translateY(0);
-    box-shadow: 2px 2px 6px black;
-}
