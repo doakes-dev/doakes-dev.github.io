@@ -5,6 +5,8 @@ document.querySelector("#resetBtn").addEventListener("click", initializeGame);
 // Global Variables
 let randomNumber;
 let attempts;
+let wins;
+let losses;
 
 initializeGame();
 
@@ -46,12 +48,14 @@ function checkGuess() {
     if (guess == randomNumber) {
         feedback.textContent = "You've guessed it! You Won!";
         feedback.style.color = "darkgreen";
+        wins++;
         gameOver();
     } else {
         document.querySelector("#guesses").textContent += guess + " ";
         if (attempts == 7) {
             feedback.textContent = "Sorry, you lost!";
             feedback.style.color = "red";
+            losses++;
             gameOver();
         } else if (guess > randomNumber) {
             feedback.textContent = "Guess was high";
