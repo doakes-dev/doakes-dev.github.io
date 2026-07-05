@@ -3,9 +3,9 @@ body {
     color: #ade8f4;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    text-align: center;
 }
 head {
-    text-align: center;
     font-weight: bold;
     text-decoration: underline;
     padding: 6px;
