@@ -14,6 +14,8 @@ function initializeGame() {
     randomNumber = Math.floor(Math.random() * 99) + 1;
     console.log("randomNumber: " + randomNumber)
     attempts = 0;
+    losses = 0;
+    wins = 0;
     document.querySelector("#attemptCount").textContent = attempts;
     document.querySelector("#lossCount").textContent = losses;
     document.querySelector("#winCount").textContent = wins;
@@ -58,7 +60,7 @@ function checkGuess() {
     } else {
         document.querySelector("#guesses").textContent += guess + " ";
         if (attempts == 7) {
-            feedback.textContent = "Sorry, you lost!";
+            feedback.textContent = "Sorry, you lost! The number was: " + randomNumber;
             feedback.style.color = "red";
             losses++;
             document.querySelector("#lossCount").textContent = losses;
