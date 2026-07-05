@@ -22,7 +22,7 @@ head {
     box-shadow: 2px 2px 6px black;
 }
 main, footer {
-    text-align: center;
+    align-items: center;
 }
 
 #guessBtn {
