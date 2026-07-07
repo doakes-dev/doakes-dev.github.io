@@ -126,10 +126,12 @@ function gradeQuiz() {
     
     const total = document.getElementById("totalScore");
 
+    total.classList.remove("text-info", "text-danger", "text-success");
+
     if (score < 80) {
-        total.style.color = "red";
+        total.classList.add("text-danger");
     } else {
-        total.style.color = "green";
+        total.classList.add("text-success");
         document.querySelector("#scoreFdbk").textContent = "You scored above 80.";
     }
 
