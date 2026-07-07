@@ -3,6 +3,7 @@ document.querySelector("button").addEventListener("click", gradeQuiz);
 let attempts = localStorage.getItem("total_attempts");
 
 displayQ4Choices();
+displayQ6Choices();
 
 if (attempts === null) {
   attempts = 0;
@@ -164,6 +165,12 @@ function gradeQuiz() {
         rightAnswer(6);
     } else {
         wrongAnswer(6);
+    }
+
+    if (q7Response === "nv") {
+        rightAnswer(7);
+    } else {
+        wrongAnswer(7);
     }
 
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
