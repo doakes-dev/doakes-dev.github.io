@@ -123,7 +123,7 @@ function gradeQuiz() {
         wrongAnswer(4);
     }
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
-
+    console.log(document.getElementById("totalScore"));
     if (score < 80) {
         document.getElementById("totalScore").style.color = "red";
     } else {
