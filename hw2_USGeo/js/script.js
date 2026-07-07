@@ -118,6 +118,7 @@ function gradeQuiz() {
     score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
+    let q7Response = document.querySelector("#q7").value
 
     if (q1Response === "sacramento") {
         rightAnswer(1);
