@@ -2,6 +2,8 @@ document.querySelector("button").addEventListener("click", gradeQuiz);
 
 let attempts = localStorage.getItem("total_attempts");
 
+displayQ4Choices();
+
 if (attempts === null) {
   attempts = 0;
 } else {
@@ -41,7 +43,7 @@ function displayQ4Choices() {
   }
 }
 
-displayQ4Choices();
+
 
 function setMarkImage(index, imageName, altText) {
   let markContainer = document.querySelector(`#markImg${index}`);
@@ -123,10 +125,10 @@ function gradeQuiz() {
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
 
     if (score < 80) {
-        document.querySelector("#totalScore").style.color = 'red';
+        document.getElementById("totalScore").style.color = 'red';
     } else {
-        document.querySelector("#totalScore").style.color = 'green';
-        document.querySelector("#scoreFdbk").textContent = "You did scored above 80.";
+        document.getElementById("totalScore").style.color = 'green';
+        document.querySelector("#scoreFdbk").textContent = "You scored above 80.";
     }
 
     attempts++;
