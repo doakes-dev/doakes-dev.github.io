@@ -41,6 +41,8 @@ function displayQ4Choices() {
   }
 }
 
+displayQ4Choices();
+
 function setMarkImage(index, imageName, altText) {
   let markContainer = document.querySelector(`#markImg${index}`);
   markContainer.textContent = "";
