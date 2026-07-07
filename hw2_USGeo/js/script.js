@@ -123,11 +123,13 @@ function gradeQuiz() {
         wrongAnswer(4);
     }
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
-    console.log(document.getElementById("totalScore"));
+    
+    const total = document.getElementById("totalScore");
+
     if (score < 80) {
-        document.getElementById("totalScore").style.color = "red";
+        total.style.color = "red";
     } else {
-        document.getElementById("totalScore").style.color = "green";
+        total.style.color = "green";
         document.querySelector("#scoreFdbk").textContent = "You scored above 80.";
     }
 
