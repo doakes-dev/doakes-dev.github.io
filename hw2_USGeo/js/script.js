@@ -125,9 +125,9 @@ function gradeQuiz() {
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
 
     if (score < 80) {
-        document.getElementById("#totalScore").style.color = "red";
+        document.getElementById("totalScore").style.color = "red";
     } else {
-        document.getElementById("#totalScore").style.color = "green";
+        document.getElementById("totalScore").style.color = "green";
         document.querySelector("#scoreFdbk").textContent = "You scored above 80.";
     }
 
