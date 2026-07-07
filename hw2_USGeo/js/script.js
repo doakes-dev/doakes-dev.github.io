@@ -43,6 +43,30 @@ function displayQ4Choices() {
   }
 }
 
+function displayQ6Choices() {
+  let q6ChoicesArray = ["Alaska", "Pennsylvania", "Arizona", "Texas", "Montana"];
+  shuffleArray(q6ChoicesArray);
+
+  let choicesContainer = document.querySelector("#q6Choices");
+  choicesContainer.textContent = "";
+
+  for (let choice of q6ChoicesArray) {
+    let input = document.createElement("input");
+    input.type = "radio";
+    input.name = "q6";
+    input.id = choice;
+    input.value = choice;
+
+    let label = document.createElement("label");
+    label.htmlFor = choice;
+    label.textContent = choice;
+
+    choicesContainer.appendChild(input);
+    choicesContainer.appendChild(label);
+    choicesContainer.appendChild(document.createTextNode(" "));
+  }
+}
+
 
 
 function setMarkImage(index, imageName, altText) {
@@ -122,6 +146,26 @@ function gradeQuiz() {
     } else {
         wrongAnswer(4);
     }
+
+    if (document.querySelector("#austin").checked &&
+    document.querySelector("#houston").checked &&
+    !document.querySelector("#newYork").checked &&
+    !document.querySelector("#chicago").checked &&
+    !document.querySelector("#pittsburgh").checked &&
+    !document.querySelector("#boise").checked) {
+        rightAnswer(5);
+    } else {
+        wrongAnswer(5);
+    }
+
+    let selectedQ6 = document.querySelector("input[name=q6]:checked");
+
+    if (selectedQ4 !== null && selectedQ6.value === "Texas") {
+        rightAnswer(6);
+    } else {
+        wrongAnswer(6);
+    }
+
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
     
     const total = document.getElementById("totalScore");
@@ -130,6 +174,7 @@ function gradeQuiz() {
 
     if (score < 80) {
         total.classList.add("text-danger");
+        document.querySelector("#scoreFdbk").textContent = "";
     } else {
         total.classList.add("text-success");
         document.querySelector("#scoreFdbk").textContent = "You scored above 80.";
