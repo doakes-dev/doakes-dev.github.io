@@ -118,7 +118,8 @@ function gradeQuiz() {
     score = 0;
     let q1Response = document.querySelector("#q1").value.toLowerCase();
     let q2Response = document.querySelector("#q2").value;
-    let q7Response = document.querySelector("#q7").value
+    let q7Response = document.querySelector("#q7").value;
+    let q1Response = document.querySelector("#q8").value.toLowerCase();
 
     if (q1Response === "sacramento") {
         rightAnswer(1);
@@ -172,6 +173,12 @@ function gradeQuiz() {
         rightAnswer(7);
     } else {
         wrongAnswer(7);
+    }
+
+    if (q8Response === "san andreas") {
+        rightAnswer(8);
+    } else {
+        wrongAnswer(8);
     }
 
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
