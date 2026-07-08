@@ -70,13 +70,13 @@ function displayQ6Choices() {
 }
 
 function displayQ10Choices() {
-  let q6ChoicesArray = ["Washington", "Virginia", "Wyoming", "Oklahoma", "Vermont"];
-  shuffleArray(q6ChoicesArray);
+  let q10ChoicesArray = ["Washington", "Virginia", "Wyoming", "Oklahoma", "Vermont"];
+  shuffleArray(q10ChoicesArray);
 
   let choicesContainer = document.querySelector("#q10Choices");
   choicesContainer.textContent = "";
 
-  for (let choice of q6ChoicesArray) {
+  for (let choice of q10ChoicesArray) {
     let input = document.createElement("input");
     input.type = "radio";
     input.name = "q10";
