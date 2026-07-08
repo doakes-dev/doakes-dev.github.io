@@ -215,6 +215,8 @@ function gradeQuiz() {
         wrongAnswer(9);
     }
 
+    let selectedQ10 = document.querySelector("input[name=q6]:checked");
+
     if (selectedQ10 !== null && selectedQ10.value === "Wyoming") {
         rightAnswer(10);
     } else {
