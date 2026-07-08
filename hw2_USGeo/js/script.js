@@ -4,6 +4,7 @@ let attempts = localStorage.getItem("total_attempts");
 
 displayQ4Choices();
 displayQ6Choices();
+displayQ10Choices();
 
 if (attempts === null) {
   attempts = 0;
@@ -68,7 +69,29 @@ function displayQ6Choices() {
   }
 }
 
+function displayQ10Choices() {
+  let q6ChoicesArray = ["Washington", "Virginia", "Wyoming", "Oklahoma", "Vermont"];
+  shuffleArray(q6ChoicesArray);
 
+  let choicesContainer = document.querySelector("#q10Choices");
+  choicesContainer.textContent = "";
+
+  for (let choice of q6ChoicesArray) {
+    let input = document.createElement("input");
+    input.type = "radio";
+    input.name = "q10";
+    input.id = choice;
+    input.value = choice;
+
+    let label = document.createElement("label");
+    label.htmlFor = choice;
+    label.textContent = choice;
+
+    choicesContainer.appendChild(input);
+    choicesContainer.appendChild(label);
+    choicesContainer.appendChild(document.createTextNode(" "));
+  }
+}
 
 function setMarkImage(index, imageName, altText) {
   let markContainer = document.querySelector(`#markImg${index}`);
@@ -85,7 +108,7 @@ function rightAnswer(index) {
   feedback.textContent = "Correct!";
   feedback.className = "bg-success text-white";
   setMarkImage(index, "checkmark.png", "Checkmark");
-  score += 20;
+  score += 10;
 }
 
 function wrongAnswer(index) {
@@ -163,7 +186,7 @@ function gradeQuiz() {
 
     let selectedQ6 = document.querySelector("input[name=q6]:checked");
 
-    if (selectedQ4 !== null && selectedQ6.value === "Texas") {
+    if (selectedQ6 !== null && selectedQ6.value === "Texas") {
         rightAnswer(6);
     } else {
         wrongAnswer(6);
@@ -179,6 +202,23 @@ function gradeQuiz() {
         rightAnswer(8);
     } else {
         wrongAnswer(8);
+    }
+
+    if (document.querySelector("#mo").checked &&
+    document.querySelector("#il").checked &&
+    document.querySelector("#in").checked &&
+    !document.querySelector("#id").checked &&
+    !document.querySelector("#ny").checked &&
+    !document.querySelector("#co").checked) {
+        rightAnswer(9);
+    } else {
+        wrongAnswer(9);
+    }
+
+    if (selectedQ10 !== null && selectedQ10.value === "Wyoming") {
+        rightAnswer(10);
+    } else {
+        wrongAnswer(10);
     }
 
     document.querySelector("#totalScore").textContent = `Total Score: ${score}`;
