@@ -79,7 +79,7 @@ async function loadCounties() {
 
         for (let item of data) {
             let option = document.createElement("option");
-            option.value = item.usps;
+            /// option.value = item.usps;
             option.textContent = item.county;
             countyMenu.appendChild(option);
         }
