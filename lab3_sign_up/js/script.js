@@ -75,7 +75,7 @@ async function loadCounties() {
     countyMenu.appendChild(defaultOption);
 
     try {
-        let url = "https://csumb.space/api/countyListAPI.php?state=${selectedState}";
+        let url = "https://csumb.space/api/countyListAPI.php?state=" + selectedState;
         console.log(url);
         let response = await fetch(url);
         let data = await response.json()
