@@ -31,6 +31,7 @@ button {
     transition: all 0.3s ease;
     width: 150px;
     height: 75px;
+    font-size: 18pt;
 }
 
 button:hover {
