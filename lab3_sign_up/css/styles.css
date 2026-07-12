@@ -16,11 +16,30 @@ form, footer {
     align-items: center;
 }
 form {
-    width: 2500px;
+    width: 500px;
     height: auto;
     margin: 8px auto;
     border: 2px solid #03045e;
     border-radius: 8px;
     background-color: #023e8a;
+    box-shadow: 2px 2px 6px black;
+}
+.button {
+    background-color: #0077b6;
+    color: #ade8f4;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0096c7;
+    transform: translateY(-2px);
+    box-shadow: 2px 4px 8px black;
+    cursor: pointer;
+}
+
+.button:active {
+    background-color: #023e8a;
+    transform: translateY(0);
     box-shadow: 2px 2px 6px black;
 }
