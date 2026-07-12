@@ -1,6 +1,6 @@
 body {
-    background-color: #023e8a;
-    color: #ade8f4;
+    background-color: #588157;
+    color: #dad7cd;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     text-align: center;
@@ -19,14 +19,14 @@ form {
     width: 500px;
     height: auto;
     margin: 8px auto;
-    border: 2px solid #03045e;
+    border: 2px solid #3a5a40;
     border-radius: 8px;
-    background-color: #023e8a;
+    background-color: #6a994e;
     box-shadow: 2px 2px 6px black;
 }
 button {
-    background-color: #0077b6;
-    color: #ade8f4;
+    background-color: #a3b18a;
+    color: #dad7cd;
     border: none;
     transition: all 0.3s ease;
     width: 150px;
@@ -35,14 +35,14 @@ button {
 }
 
 button:hover {
-    background-color: #0096c7;
+    background-color: #a7c957;
     transform: translateY(-2px);
     box-shadow: 2px 4px 8px black;
     cursor: pointer;
 }
 
 button:active {
-    background-color: #023e8a;
+    background-color: #6a994e;
     transform: translateY(0);
     box-shadow: 2px 2px 6px black;
 }
