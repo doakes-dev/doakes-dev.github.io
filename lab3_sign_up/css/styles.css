@@ -29,6 +29,8 @@ button {
     color: #ade8f4;
     border: none;
     transition: all 0.3s ease;
+    width: 150px;
+    height: 75px;
 }
 
 button:hover {
