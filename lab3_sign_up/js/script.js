@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", loadStates);
 document.querySelector("#zip").addEventListener("change", displayCity);
 document.querySelector("#username").addEventListener("change", checkUsername);
+document.querySelector("#state").addEventListener("change", loadCounties);
+document.querySelector("#signupForm").addEventListener("submit", validateForm);
 
 async function displayCity() {
   try {
@@ -18,6 +20,8 @@ async function displayCity() {
     }
 
     document.querySelector("#city").textContent = data.city;
+    document.querySelector("#latitude").textContent = data.latitude;
+    document.querySelector("#longitude").textContent = data.longitude;
 
   } catch (error) {
     document.querySelector("#city").textContent = "Unable to retrieve city";
@@ -58,6 +62,38 @@ async function loadStates() {
   }
 }
 
+async function loadCounties() {
+    let selectedState = document.querySelector("#state").value;
+    let countyMenu = document.querySelector("#county");
+    countyMenu.textContent = "";
+
+    let defaultOption = document.createElement("option");
+    defaultOption.value = "";
+    defaultOption.textContent = "Select One";
+    countyMenu.appendChild(defaultOption);
+
+    try {
+        let url = "https://csumb.space/api/countyListAPI.php?state=${selectedState}";
+        let response = await fetch(url);
+        let data = await response.json()
+
+        for (let item of data) {
+            let option = document.createElement("option");
+            option.value = item.usps;
+            option.textContent = item.county;
+            countyMenu.appendChild(option);
+        }
+    } catch {
+        console.error(error);
+        countyMenu.textContent = "";
+
+        let errorOption = document.createElement("option");
+        errorOption.value = "";
+        errorOption.textContent = "Unable to load counties";
+        countyMenu.appendChild(errorOption);
+    }
+}
+
 async function checkUsername() {
   let username = document.querySelector("#username").value;
   let usernameError = document.querySelector("#usernameError");
@@ -80,5 +116,46 @@ async function checkUsername() {
     usernameError.textContent = "Username taken";
     usernameError.style.color = "red";
     return false;
+  }
+}
+
+async function validateForm(event) {
+  event.preventDefault();
+
+  let isValid = true;
+
+  let username = document.querySelector("#username").value;
+  let usernameError = document.querySelector("#usernameError");
+
+  usernameError.textContent = "";
+
+  if (username.length === 0) {
+    usernameError.textContent = "Username required";
+    usernameError.style.color = "red";
+    isValid = false;
+  } else {
+    let usernameAvailable = await checkUsername();
+
+    if (usernameAvailable === false) {
+      isValid = false;
+    }
+  }
+
+  let password = document.querySelector("#password").value;
+  let passwordAgain = document.querySelector("#passwordAgain").value;
+  let passwordError = document.querySelector("#passwordError");
+
+  if (password.length < 6) {
+    passwordError.textContent = "Password must be at least 6 letters and/or numbers";
+    passwordError.style.color = "red";
+    isValid = false;
+  } else if (password.value != passwordAgain.value) {
+    passwordError.textContent = "Passwords do not match"
+    passwordError.style.color = "red";
+    isValid = false;
+  }
+
+  if (isValid) {
+    document.querySelector("#signupForm").submit();
   }
 }
