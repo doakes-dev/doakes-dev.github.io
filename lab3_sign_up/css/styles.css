@@ -16,8 +16,6 @@ form, footer {
     align-items: center;
 }
 form {
-    display: flex;
-    justify-content: space-between;
     width: 2500px;
     height: auto;
     margin: 8px auto;
