@@ -63,7 +63,9 @@ async function loadStates() {
 }
 
 async function loadCounties() {
+    console.log("loadCounties called");
     let selectedState = document.querySelector("#state").value;
+    console.log(selectedState);
     let countyMenu = document.querySelector("#county");
     countyMenu.textContent = "";
 
@@ -74,12 +76,14 @@ async function loadCounties() {
 
     try {
         let url = "https://csumb.space/api/countyListAPI.php?state=${selectedState}";
+        console.log(url);
         let response = await fetch(url);
         let data = await response.json()
 
         for (let item of data) {
+            console.log(item);
             let option = document.createElement("option");
-            option.value = item.usps;
+            /// option.value = item.usps;
             option.textContent = item.county;
             countyMenu.appendChild(option);
         }
