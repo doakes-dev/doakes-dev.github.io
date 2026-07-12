@@ -63,9 +63,7 @@ async function loadStates() {
 }
 
 async function loadCounties() {
-    console.log("loadCounties called");
     let selectedState = document.querySelector("#state").value;
-    console.log(selectedState);
     let countyMenu = document.querySelector("#county");
     countyMenu.textContent = "";
 
@@ -76,14 +74,12 @@ async function loadCounties() {
 
     try {
         let url = "https://csumb.space/api/countyListAPI.php?state=" + selectedState;
-        console.log(url);
         let response = await fetch(url);
         let data = await response.json()
 
         for (let item of data) {
             console.log(item);
             let option = document.createElement("option");
-            /// option.value = item.usps;
             option.textContent = item.county;
             countyMenu.appendChild(option);
         }
@@ -123,6 +119,24 @@ async function checkUsername() {
   }
 }
 
+async function checkPassword() {
+    let password = document.querySelector("#password").value;
+    let passwordAgain = document.querySelector("#passwordAgain").value;
+    let passwordError = document.querySelector("#passwordError");
+
+    if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 letters and/or numbers";
+        passwordError.style.color = "red";
+        return false;
+    } else if (password.value != passwordAgain.value) {
+        passwordError.textContent = "Passwords do not match"
+        passwordError.style.color = "red";
+        return false;
+    } else {
+        return true;
+    }
+}
+
 async function validateForm(event) {
   event.preventDefault();
 
@@ -145,19 +159,21 @@ async function validateForm(event) {
     }
   }
 
-  let password = document.querySelector("#password").value;
-  let passwordAgain = document.querySelector("#passwordAgain").value;
-  let passwordError = document.querySelector("#passwordError");
+  
 
-  if (password.length < 6) {
-    passwordError.textContent = "Password must be at least 6 letters and/or numbers";
-    passwordError.style.color = "red";
-    isValid = false;
-  } else if (password.value != passwordAgain.value) {
-    passwordError.textContent = "Passwords do not match"
-    passwordError.style.color = "red";
-    isValid = false;
-  }
+    if (password.length === 0){
+        passwordError.textContent = "Password required";
+        passwordError.style.color = "red";
+        isValid = false;
+    } else {
+        let passwordValid = await checkPassword();
+
+        if (passwordValid === false) {
+            isValid = false;
+        }
+    }
+
+  
 
   if (isValid) {
     document.querySelector("#signupForm").submit();
