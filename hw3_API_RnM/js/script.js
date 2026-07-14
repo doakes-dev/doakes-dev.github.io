@@ -6,10 +6,18 @@ async function searchCharacters(event) {
     const charName = document.querySelector("#charName").value
     const species = document.querySelector("#speciesSelect").value;
     const selectedGender = document.querySelector("input[name='gender']:checked");
+    const message = document.querySelector("#validationMessage");
 
     let url = "https://rickandmortyapi.com/api/character/?";
 
-    console.log(url);
+    if (charName === "" && species === "" && selectedGender === null) {
+        message.textContent = "Please slect at least one search criterion.";
+        message.style.color = "red";
+        return;
+    }
+    message.textContent = "";
+    document.querySelector("#results").textContent = "";
+
     if (charName !== "") {
         url += "name=" + encodeURIComponent(charName) + "&";
     }
