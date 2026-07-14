@@ -10,7 +10,7 @@ async function searchCharacters(event) {
     let url = "https://rickandmortyapi.com/api/character/?";
 
     console.log(url);
-    if (charName == "") {
+    if (charName !== "") {
         url += "name=" + encodeURIComponent(charName) + "&";
     }
     
