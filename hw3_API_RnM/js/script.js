@@ -13,10 +13,11 @@ async function searchCharacters(event) {
     if (charName === "" && species === "" && selectedGender === null) {
         message.textContent = "Please slect at least one search criterion.";
         message.style.color = "red";
+        document.querySelector("#results").textContent = "";
         return;
     }
     message.textContent = "";
-    document.querySelector("#results").textContent = "";
+    
 
     if (charName !== "") {
         url += "name=" + encodeURIComponent(charName) + "&";
