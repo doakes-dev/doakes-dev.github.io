@@ -38,6 +38,7 @@ async function searchCharacters(event) {
 function displayCharacters(characters) {
     const results = document.querySelector("#results");
     results.textContent = "";
+    const statusClass = character.status.toLowerCase();
 
     for (const character of characters) {
         const card = document.createElement("div");
@@ -48,7 +49,7 @@ function displayCharacters(characters) {
             <h2>${character.name}</h2>
             <p><strong>Species:</strong> ${character.species}</p>
             <p><strong>Gender:</strong> ${character.gender}</p>
-            <p><strong>Status:</strong> ${character.status}</p>
+            <p><strong>Status:</strong><span class="${statusClass}"> ${character.status}</span></p>
             <p><strong>Origin:</strong> ${character.origin.name}</p>
             <p><strong>Episodes:</strong> ${character.episode.length}</p>
         `;
