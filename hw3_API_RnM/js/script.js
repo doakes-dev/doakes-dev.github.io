@@ -38,9 +38,10 @@ async function searchCharacters(event) {
 function displayCharacters(characters) {
     const results = document.querySelector("#results");
     results.textContent = "";
-    const statusClass = character.status.toLowerCase();
+    
 
     for (const character of characters) {
+        const statusClass = character.status.toLowerCase();
         const card = document.createElement("div");
         card.classList.add("characterCard");
 

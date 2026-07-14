@@ -12,6 +12,11 @@
     padding: 15px;
     text-align: center;
     box-shadow: 3px 3px 10px black;
+    transition: transform 0.2s ease;
+}
+
+.characterCard:hover {
+    transform: translateY(-5px);
 }
 
 .characterCard img {
@@ -25,12 +30,15 @@
 
 .alive {
     color: limegreen;
+    border-left: 6px solid limegreen;
 }
 
 .dead {
     color: crimson;
+    border-left: 6px solid crimson;
 }
 
 .unknown {
     color: silver;
+    border-left: 6px solid silver;
 }
