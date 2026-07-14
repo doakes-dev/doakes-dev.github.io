@@ -9,8 +9,8 @@ async function searchCharacters(event) {
 
     let url = "https://rickandmortyapi.com/api/character/?";
 
-    if (species == "") {
-        url += "name=" + encodeURIComponent(species) + "&";
+    if (charName == "") {
+        url += "name=" + encodeURIComponent(charName) + "&";
     }
     
     if (species !== "") {
