@@ -3,11 +3,16 @@ document.querySelector("#RMcharacterSearch").addEventListener("submit", searchCh
 async function searchCharacters(event) {
     event.preventDefault();
 
+    const charName = document.querySelector("#charName").value
     const species = document.querySelector("#speciesSelect").value;
     const selectedGender = document.querySelector("input[name='gender']:checked");
 
     let url = "https://rickandmortyapi.com/api/character/?";
 
+    if (species !== "") {
+        url += "name=" + encodeURIComponent(species) + "&";
+    }
+    
     if (species !== "") {
         url += "species=" + encodeURIComponent(species) + "&";
     }
